@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>PROTOCOL 06 // THE SIGNAL</title>
+    <meta name="description"
+        content="The Machine generates Infinity. The Human generates the Signal. Locate your frequency in the Digital Audit.">
+    <meta property="og:title" content="06 // THE SIGNAL">
+    <meta property="og:description" content="The Machine generates Infinity. The Human generates the Signal.">
+    <meta property="og:image" content="https://i.averylakeofficial.com/preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://i.averylakeofficial.com/preview.jpg">
+    <meta property="og:url" content="https://i.averylakeofficial.com/">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23ffffff'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Cinzel:wght@900&family=Courier+Prime:wght@700&family=Playfair+Display:wght@900&family=VT323&family=Permanent+Marker&family=Orbitron:wght@900&family=Wallpoet&family=Special+Elite&family=Abril+Fatface&family=Syncopate:wght@700&family=Rubik+Glitch&family=Press+Start+2P&family=Bungee+Shade&family=Monoton&family=UnifrakturMaguntia&family=Faster+One&family=Nosifer&family=Six+Caps&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <style>
+        /* ============================================== */
+        /* === UNIFIED DESIGN SYSTEM v2.0 === */
+        /* ============================================== */
+        :root {
+            --bg-void: #050505;
+            --text-main: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.4);
+            --text-muted: rgba(255, 255, 255, 0.6);
+            --accent-primary: #ffffff;
+            --accent-secondary: #ff00ff;
+            --border-dim: rgba(255, 255, 255, 0.2);
+            --font-main: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-void);
+            font-family: var(--font-main);
+            color: var(--text-main);
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            user-select: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+        }
+
+        /* === GATEKEEPER === */
+        #gatekeeper {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--bg-void);
+            z-index: 99999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #gatekeeper h1 {
+            color: var(--accent-secondary);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        #gatekeeper p {
+            color: var(--text-dim);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+        /* === START OVERLAY === */
+        #start-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-void);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .start-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .start-by {
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+
+        .start-artist {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+            color: var(--text-main);
+        }
+
+        .btn-initialize {
+            background: transparent;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            font-family: var(--font-main);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 18px 50px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .btn-initialize:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .sound-note {
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* === MAIN LAYOUT === */
+        .main-container {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .main-container.active {
+            opacity: 1;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .top-bar>* {
+            pointer-events: auto;
+        }
+
+        .protocol-title {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .protocol-subtitle {
+            font-size: 9px;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
+
+        .audio-toggle {
+            font-family: var(--font-main);
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--border-dim);
+            background: transparent;
+            color: var(--text-dim);
+            padding: 8px 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .audio-toggle:hover {
+            border-color: var(--text-muted);
+            color: var(--text-muted);
+        }
+
+        .audio-toggle.active {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* BOTTOM BAR */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        .bottom-bar>* {
+            pointer-events: auto;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .reset-link {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .reset-link:hover {
+            color: var(--text-main);
+        }
+
+        .footer-credit {
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        .footer-credit:hover {
+            color: var(--text-main);
+        }
+
+        .music-credit {
+            font-size: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-continue {
+            font-family: var(--font-main);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--border-dim);
+            background: transparent;
+            color: var(--text-muted);
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-continue:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* === STAGE (THE I GENERATOR) === */
+        #stage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        #subject {
+            font-size: 35vh;
+            font-weight: 700;
+            line-height: 1;
+            will-change: transform, filter, color;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+            text-align: center;
+        }
+
+        #noise-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        /* CAPTURE TRIGGER BUTTON */
+        .trigger-zone {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: transform 0.1s;
+            padding: 20px;
+            z-index: 60;
+        }
+
+        .trigger-btn {
+            width: 90px;
+            height: 90px;
+            border: 2px solid var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .stop-square {
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-primary);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+                box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+            }
+
+            100% {
+                opacity: 0.8;
+                transform: scale(1);
+            }
+        }
+
+        /* Glitch Effects */
+        .glitch-a {
+            text-shadow: 4px 0 var(--accent-secondary), -4px 0 #00ffff;
+        }
+
+        .glitch-b {
+            transform: skewX(-20deg);
+            color: var(--accent-secondary) !important;
+            filter: blur(2px);
+        }
+
+        /* === DATA CAPTURE OVERLAY === */
+        #capture-overlay {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 5000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #capture-overlay.active {
+            display: flex;
+        }
+
+        .capture-modal {
+            width: 320px;
+            text-align: center;
+        }
+
+        .capture-header {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .capture-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-dim);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            font-size: 14px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 12px;
+            margin-bottom: 30px;
+            outline: none;
+        }
+
+        .capture-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .capture-input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        /* UNIFIED BUTTONS */
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--accent-primary);
+            color: var(--accent-primary);
+            font-family: var(--font-main);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--border-dim);
+            color: var(--text-muted);
+            font-family: var(--font-main);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn-locked {
+            opacity: 0.4;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .btn-locked.unlocked {
+            opacity: 1;
+            cursor: pointer;
+            pointer-events: auto;
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .btn-locked.unlocked:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Helpers */
+        .hidden {
+            display: none !important;
+        }
+
+        .generator-canvas {
+            display: none;
+        }
+
+        #qr-source {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- GATEKEEPER -->
+    <div id="gatekeeper">
+        <h1>Restricted Terminal</h1>
+        <p>In-app browsers prevent full functionality.<br>Please open in Safari or Chrome.</p>
+    </div>
+
+    <!-- START OVERLAY -->
+    <div id="start-overlay">
+        <div class="start-title">THE SIGNAL</div>
+        <div class="start-by">by</div>
+        <div class="start-artist">AVERY LAKE</div>
+        <button class="btn-initialize" onclick="initializeProtocol()">INITIALIZE</button>
+        <div class="sound-note">(Turn on sound for full effect)</div>
+    </div>
+
+    <audio id="bg-audio" loop preload="auto">
+        <source src="Superposition.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MAIN INTERFACE -->
+    <div class="main-container" id="main-interface">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div>
+                <div class="protocol-title">The Signal</div>
+                <div class="protocol-subtitle">Protocol 06</div>
+            </div>
+            <button class="audio-toggle" id="audio-toggle" onclick="toggleAudio()">AUDIO: OFF</button>
+        </div>
+
+        <!-- STAGE -->
+        <canvas id="noise-canvas"></canvas>
+        <div id="stage">
+            <div id="subject">I</div>
+        </div>
+
+        <!-- CAPTURE TRIGGER -->
+        <div class="trigger-zone" id="trigger-btn">
+            <div class="trigger-btn">
+                <div class="stop-square"></div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bottom-bar">
+            <div class="footer-left">
+                <span class="reset-link" onclick="location.reload()">RESET PROTOCOL</span>
+                <a href="https://www.averylakeofficial.com/" class="footer-credit" target="_blank">AN ART OF AVERY LAKE
+                    EXPERIMENT</a>
+                <span style="font-size: 8px; opacity: 0.5;">© 2026 Avery Lake. All rights reserved.</span>
+                <a href="https://averylakeofficial.com/the-signal" target="_blank" class="music-credit"
+                    style="cursor: pointer;">Audio: Superposition by AVERY LAKE</a>
+            </div>
+            <a href="https://digital.averylakeofficial.com/" class="btn-continue">CONTINUE THE AUDIT</a>
+        </div>
+    </div>
+
+    <!-- DATA CAPTURE OVERLAY -->
+    <div id="capture-overlay">
+        <div class="capture-modal">
+            <div class="capture-header">DATA CAPTURED</div>
+
+            <input type="text" class="capture-input" id="subject-input" placeholder="ENTER SUBJECT NAME" maxlength="25">
+
+            <button class="btn-primary" onclick="downloadArtifact()">
+                <span style="opacity:0.5; margin-right:8px;">1.</span> DOWNLOAD ARTIFACT (IMAGE)
+            </button>
+            <button class="btn-secondary" onclick="downloadDataLog()">
+                <span style="opacity:0.5; margin-right:8px;">2.</span> DOWNLOAD DATA LOG
+            </button>
+            <button class="btn-secondary btn-locked" id="print-btn" onclick="sendCommission()" style="opacity:0.3;">
+                <span style="opacity:0.5; margin-right:8px;">3.</span> COMMISSION INQUIRY (optional)
+            </button>
+
+            <div style="height:10px;"></div>
+
+            <a href="https://digital.averylakeofficial.com/" class="btn-secondary">
+                <span style="opacity:0.5; margin-right:8px;">4.</span> CONTINUE THE AUDIT
+            </a>
+
+            <div style="margin-top:15px; text-align:center;">
+                <span class="reset-link" onclick="location.reload()"
+                    style="font-size:9px; border-bottom:1px solid #333; padding-bottom:2px;">RESET PROTOCOL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERATORS -->
+    <canvas id="gen-artifact" class="generator-canvas"></canvas>
+    <canvas id="gen-cert" class="generator-canvas"></canvas>
+    <div id="qr-source"></div>
+
+    <script>
+        // --- GATEKEEPER LOGIC ---
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isInApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || (ua.indexOf("Instagram") > -1) || (ua.indexOf("TikTok") > -1);
+        if (isInApp) {
+            document.getElementById('gatekeeper').style.display = 'flex';
+            throw new Error("Execution Halted: In-App Browser Detected.");
+        }
+
+        // --- CONFIG ---
+        const SUBJECT = document.getElementById('subject');
+        const SPEED = 30;
+        const PROJECT_URL = "https://i.averylakeofficial.com";
+
+        // --- THE LIBRARY ---
+        const FONTS = [
+            "'Space Grotesk'", "'Cinzel'", "'Courier Prime'", "'Playfair Display'", "'VT323'",
+            "'Permanent Marker'", "'Orbitron'", "'Wallpoet'", "'Special Elite'", "'Abril Fatface'",
+            "'Syncopate'", "'Rubik Glitch'", "'Press Start 2P'", "'Bungee Shade'", "'Monoton'",
+            "'UnifrakturMaguntia'", "'Faster One'", "'Nosifer'", "'Six Caps'", "'Black Ops One'",
+            "'Creepster'", "'Eater'", "'Frijole'", "'Grenze Gotisch'", "'Jacques Francois Shadow'",
+            "'Koulen'", "'Libre Barcode 39 Text'", "'Metal Mania'", "'New Rocker'", "'Pirata One'",
+            "'Rye'", "'Sancreek'", "'Text Me One'", "'Underdog'", "'Vast Shadow'", "'Xanh Mono'"
+        ];
+
+        const COLORS = [
+            "#ffffff", "#ff00ff", "#ccff00", "#00ffff", "#ffff00",
+            "#ff3333", "#00ff99", "#9900ff", "#ff9900", "#00ccff"
+        ];
+
+        // --- STATE ---
+        let position = 0;
+        let isRunning = false;
+        let animationFrame;
+        let capturedData = {};
+        let dlArtifact = false, dlLog = false;
+
+        // --- AUDIO ENGINE ---
+        const bgAudio = document.getElementById('bg-audio');
+        const audioBtn = document.getElementById('audio-toggle');
+        let audioPlaying = false;
+
+        bgAudio.volume = 0;
+
+        // --- INITIALIZE PROTOCOL ---
+        function initializeProtocol() {
+            document.getElementById('start-overlay').style.opacity = '0';
+            setTimeout(() => { document.getElementById('start-overlay').style.display = 'none'; }, 500);
+
+            document.getElementById('main-interface').classList.add('active');
+
+            isRunning = true;
+            loop();
+            drawNoise();
+
+            bgAudio.play().then(() => {
+                audioPlaying = true;
+                fadeInAudio();
+                audioBtn.textContent = "AUDIO: ON";
+                audioBtn.classList.add('active');
+            }).catch(() => { });
+        }
+
+        function toggleAudio() {
+            if (audioPlaying) {
+                fadeOutAudio();
+                audioPlaying = false;
+                audioBtn.textContent = "AUDIO: OFF";
+                audioBtn.classList.remove('active');
+            } else {
+                bgAudio.play();
+                fadeInAudio();
+                audioPlaying = true;
+                audioBtn.textContent = "AUDIO: ON";
+                audioBtn.classList.add('active');
+            }
+        }
+
+        function fadeInAudio() {
+            let vol = 0;
+            const interval = setInterval(() => {
+                if (vol < 0.5) {
+                    vol += 0.05;
+                    bgAudio.volume = vol;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 200);
+        }
+
+        function fadeOutAudio() {
+            let vol = bgAudio.volume;
+            const interval = setInterval(() => {
+                if (vol > 0.05) {
+                    vol -= 0.05;
+                    bgAudio.volume = vol;
+                } else {
+                    bgAudio.volume = 0;
+                    bgAudio.pause();
+                    clearInterval(interval);
+                }
+            }, 100);
+        }
+
+        // --- SETUP ---
+        const canvas = document.getElementById('noise-canvas');
+        const ctx = canvas.getContext('2d');
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize); resize();
+
+        function drawNoise() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        // --- INFINITE LOOP ---
+        function loop() {
+            if (!isRunning) return;
+            position += SPEED;
+
+            const cycle = Math.floor(position / 250);
+            const fontIdx = cycle % FONTS.length;
+            const colorIdx = (cycle * 2) % COLORS.length;
+
+            SUBJECT.style.fontFamily = FONTS[fontIdx];
+            SUBJECT.style.color = COLORS[colorIdx];
+            SUBJECT.innerText = "I";
+            SUBJECT.className = "";
+            SUBJECT.style.transform = "scale(1)";
+
+            const rand = Math.random();
+            if (rand > 0.88) {
+                const chaos = ['|', '1', '!', '/', '\\', ']', '[', '0', '?', 'i'];
+                SUBJECT.innerText = chaos[Math.floor(Math.random() * chaos.length)];
+                SUBJECT.className = "glitch-a";
+            } else if (rand > 0.75) {
+                SUBJECT.style.transform = `translate(${Math.random() * 10 - 5}px, ${Math.random() * 10 - 5}px)`;
+            } else if (rand > 0.70) {
+                SUBJECT.className = "glitch-b";
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = `rgba(255,255,255,${Math.random() * 0.12})`;
+            for (let i = 0; i < 45; i++) ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 2, 20);
+
+            animationFrame = requestAnimationFrame(loop);
+        }
+
+        // --- CAPTURE TRIGGER ---
+        const stopBtn = document.getElementById('trigger-btn');
+        const handleStop = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!isRunning) return;
+
+            isRunning = false;
+            cancelAnimationFrame(animationFrame);
+            fadeOutAudio();
+
+            const style = window.getComputedStyle(SUBJECT);
+            const now = new Date();
+            capturedData = {
+                text: SUBJECT.innerText,
+                font: style.fontFamily,
+                color: style.color,
+                cycles: Math.floor(position / 250),
+                hash: "0x" + Math.random().toString(16).substr(2, 8).toUpperCase(),
+                time: now.toLocaleTimeString(),
+                date: now.toLocaleDateString()
+            };
+
+            try {
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                capturedData.location = tz.split('/')[1].replace('_', ' ').toUpperCase() || "UNKNOWN";
+            } catch (e) { capturedData.location = "LOCAL TERMINAL"; }
+
+            // Generate QR and artifact immediately
+            generateQRCodeAndDraw();
+        };
+
+        stopBtn.addEventListener('click', handleStop);
+        stopBtn.addEventListener('touchstart', handleStop, { passive: false });
+
+        // --- PROCESSING ---
+        function generateQRCodeAndDraw() {
+            const container = document.getElementById("qr-source");
+            container.innerHTML = "";
+
+            new QRCode(container, {
+                text: PROJECT_URL,
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+            let attempts = 0;
+            const checkQR = setInterval(() => {
+                attempts++;
+                const qrCanvas = container.querySelector("canvas");
+                const qrImg = container.querySelector("img");
+
+                if (qrCanvas || (qrImg && qrImg.src.length > 100)) {
+                    clearInterval(checkQR);
+                    setTimeout(() => {
+                        drawArtifact(qrCanvas, qrImg);
+                        document.getElementById('capture-overlay').classList.add('active');
+                    }, 100);
+                }
+
+                if (attempts > 40) {
+                    clearInterval(checkQR);
+                    drawArtifact(null, null);
+                    document.getElementById('capture-overlay').classList.add('active');
+                }
+            }, 50);
+        }
+
+        // --- MONOLITH GENERATOR ---
+        function drawArtifact(qrCanvas, qrImg) {
+            const c = document.getElementById('gen-artifact');
+            const cx = c.getContext('2d');
+            c.width = 2250; c.height = 3000;
+
+            // Base background
+            cx.fillStyle = "#080808";
+            cx.fillRect(0, 0, 2250, 3000);
+
+            // Textured background layers (white theme - ENHANCED)
+            // White stripe 1 - NARROW BUT VISIBLE
+            const whiteGrad1 = cx.createLinearGradient(0, 0, 2250, 0);
+            whiteGrad1.addColorStop(0, "transparent");
+            whiteGrad1.addColorStop(0.39, "transparent");
+            whiteGrad1.addColorStop(0.40, "rgba(255, 255, 255, 0.5)");
+            whiteGrad1.addColorStop(0.42, "rgba(255, 255, 255, 0.5)");
+            whiteGrad1.addColorStop(0.43, "transparent");
+            whiteGrad1.addColorStop(1, "transparent");
+            cx.fillStyle = whiteGrad1;
+            cx.fillRect(0, 0, 2250, 3000);
+
+            // White stripe 2 - NARROW BUT VISIBLE
+            const whiteGrad2 = cx.createLinearGradient(0, 0, 2250, 0);
+            whiteGrad2.addColorStop(0, "transparent");
+            whiteGrad2.addColorStop(0.59, "transparent");
+            whiteGrad2.addColorStop(0.60, "rgba(255, 255, 255, 0.5)");
+            whiteGrad2.addColorStop(0.62, "rgba(255, 255, 255, 0.5)");
+            whiteGrad2.addColorStop(0.63, "transparent");
+            whiteGrad2.addColorStop(1, "transparent");
+            cx.fillStyle = whiteGrad2;
+            cx.fillRect(0, 0, 2250, 3000);
+
+            // Static noise stripes
+            const staticGrad = cx.createLinearGradient(0, 0, 2250, 0);
+            staticGrad.addColorStop(0, "transparent");
+            staticGrad.addColorStop(0.10, "transparent");
+            staticGrad.addColorStop(0.10, "rgba(255, 255, 255, 0.08)");
+            staticGrad.addColorStop(0.30, "rgba(255, 255, 255, 0.08)");
+            staticGrad.addColorStop(0.30, "transparent");
+            staticGrad.addColorStop(1, "transparent");
+            cx.fillStyle = staticGrad;
+            for (let y = 20; y < 3000; y += 70) {
+                cx.fillRect(0, y, 2250, 70);
+            }
+
+            // Scanlines - HIGHLY VISIBLE
+            cx.fillStyle = "rgba(0, 0, 0, 0.8)";
+            for (let y = 0; y < 3000; y += 2) {
+                cx.fillRect(0, y, 2250, 1);
+            }
+
+            // Vignette - LIGHTER to show white texture
+            const vignette = cx.createRadialGradient(1125, 1500, 1500 * 0.25, 1125, 1500, 1500 * 0.95);
+            vignette.addColorStop(0, "transparent");
+            vignette.addColorStop(1, "rgba(0, 0, 0, 0.4)");
+            cx.fillStyle = vignette;
+            cx.fillRect(0, 0, 2250, 3000);
+
+            const frameW = 1400; const frameH = 2488;
+            const frameX = (2250 - frameW) / 2; const frameY = 150;
+
+            // FILL MONOLITH INTERIOR (blocks texture from showing inside)
+            cx.fillStyle = "#000000";
+            cx.fillRect(frameX, frameY, frameW, frameH);
+
+            // WHITE MONOLITH BORDER
+            cx.strokeStyle = "#ffffff";
+            cx.lineWidth = 6;
+            cx.strokeRect(frameX, frameY, frameW, frameH);
+
+            // Corner brackets - White + Gray alternating
+            const cornerSize = 60;
+            const cornerOffset = 45;
+            cx.lineWidth = 6;
+
+            // Top-left - WHITE
+            cx.strokeStyle = "rgba(255, 255, 255, 0.9)";
+            cx.beginPath();
+            cx.moveTo(frameX - cornerOffset, frameY - cornerOffset + cornerSize);
+            cx.lineTo(frameX - cornerOffset, frameY - cornerOffset);
+            cx.lineTo(frameX - cornerOffset + cornerSize, frameY - cornerOffset);
+            cx.stroke();
+
+            // Top-right - LIGHT GRAY
+            cx.strokeStyle = "rgba(150, 150, 150, 0.9)";
+            cx.beginPath();
+            cx.moveTo(frameX + frameW + cornerOffset - cornerSize, frameY - cornerOffset);
+            cx.lineTo(frameX + frameW + cornerOffset, frameY - cornerOffset);
+            cx.lineTo(frameX + frameW + cornerOffset, frameY - cornerOffset + cornerSize);
+            cx.stroke();
+
+            // Bottom-left - LIGHT GRAY
+            cx.strokeStyle = "rgba(150, 150, 150, 0.9)";
+            cx.beginPath();
+            cx.moveTo(frameX - cornerOffset, frameY + frameH + cornerOffset - cornerSize);
+            cx.lineTo(frameX - cornerOffset, frameY + frameH + cornerOffset);
+            cx.lineTo(frameX - cornerOffset + cornerSize, frameY + frameH + cornerOffset);
+            cx.stroke();
+
+            // Bottom-right - WHITE
+            cx.strokeStyle = "rgba(255, 255, 255, 0.9)";
+            cx.beginPath();
+            cx.moveTo(frameX + frameW + cornerOffset - cornerSize, frameY + frameH + cornerOffset);
+            cx.lineTo(frameX + frameW + cornerOffset, frameY + frameH + cornerOffset);
+            cx.lineTo(frameX + frameW + cornerOffset, frameY + frameH + cornerOffset - cornerSize);
+            cx.stroke();
+
+            cx.textAlign = "center"; cx.textBaseline = "middle";
+            cx.font = `bold 800px ${capturedData.font.replace(/'/g, "")}`;
+            cx.fillStyle = capturedData.color;
+            cx.shadowColor = capturedData.color; cx.shadowBlur = 50;
+            cx.fillText(capturedData.text, 1125, frameY + (frameH / 2));
+            cx.shadowBlur = 0;
+
+            // FOOTER
+            const footerY = 2850;
+            cx.font = "bold 36px Helvetica, Arial, sans-serif";
+            cx.fillStyle = "#ffffff";
+
+            // Draw QR
+            if (qrCanvas || qrImg) {
+                cx.fillStyle = "#ffffff";
+                cx.fillRect(150, 2760, 130, 130);
+                if (qrCanvas) {
+                    cx.drawImage(qrCanvas, 160, 2770, 110, 110);
+                } else {
+                    cx.drawImage(qrImg, 160, 2770, 110, 110);
+                }
+            }
+
+            cx.fillStyle = "#ffffff";
+            cx.textAlign = "left";
+            cx.fillText(capturedData.hash + " (1/1)", 300, footerY);
+            cx.textAlign = "center";
+            cx.fillText("THE SIGNAL", 1125, footerY);
+            cx.textAlign = "right";
+            cx.fillText("AVERY LAKE", 2100, footerY);
+        }
+
+        // --- DOWNLOADS ---
+        function downloadArtifact() {
+            const name = document.getElementById('subject-input').value.toUpperCase() || "ANONYMOUS";
+            capturedData.name = name;
+
+            const c = document.getElementById('gen-artifact');
+            const link = document.createElement('a');
+            link.download = `THE_SIGNAL_ARTIFACT_${capturedData.hash}.png`;
+            link.href = c.toDataURL("image/png");
+            link.click();
+            dlArtifact = true;
+            checkUnlock();
+        }
+
+        function downloadDataLog() {
+            const name = document.getElementById('subject-input').value.toUpperCase() || "ANONYMOUS";
+            capturedData.name = name;
+
+            const d = capturedData;
+            const logContent = `═══════════════════════════════════════════
+        DIGITAL AUDIT // PROTOCOL 06
+═══════════════════════════════════════════
+
+SUBJECT ID............... ${d.name}
+TIMESTAMP................ ${d.time}
+DATE..................... ${d.date}
+LOCATION................. ${d.location}
+UNIQUE HASH.............. ${d.hash}
+
+─────────────────────────────────────────────
+PROTOCOL SPECIFIC DATA:
+─────────────────────────────────────────────
+SIGNAL TEXT.............. ${d.text}
+CYCLES................... ${d.cycles}
+FONT..................... ${d.font}
+COLOR.................... ${d.color}
+
+─────────────────────────────────────────────
+PHILOSOPHICAL NOTE
+─────────────────────────────────────────────
+An "I" is a signal. Or is it everything?
+
+You captured "${d.text}" in ${d.font} after ${d.cycles} cycles.
+
+In infinite permutations, you chose this moment.
+One symbol. One self. One signal in the noise.
+It is a singular choice that makes it real.
+
+─────────────────────────────────────────────
+ARTIFACT STATUS:       VERIFIED
+─────────────────────────────────────────────
+
+AUDIO: "Superposition" by AVERY LAKE
+© AVERY LAKE OFFICIAL // 2026
+THE DIGITAL AUDIT OF THE HUMAN CONDITION
+`;
+            const blob = new Blob([logContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.download = `SIGNAL_DATA_LOG_${d.hash}.txt`;
+            link.href = URL.createObjectURL(blob);
+            link.click();
+            dlLog = true;
+            checkUnlock();
+        }
+
+        function checkUnlock() {
+            if (dlArtifact && dlLog) {
+                const btn = document.getElementById('print-btn');
+                btn.classList.add('unlocked');
+                btn.style.opacity = '1';
+                btn.style.borderColor = 'var(--accent-primary)';
+                btn.style.color = 'var(--accent-primary)';
+                btn.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.3)';
+                btn.style.cursor = 'pointer';
+                btn.style.pointerEvents = 'auto';
+
+                // Mark protocol as completed in localStorage
+                try {
+                    const progress = JSON.parse(localStorage.getItem('digitalAuditProgress') || '{}');
+                    progress.signal = { completed: true, timestamp: Date.now() };
+                    localStorage.setItem('digitalAuditProgress', JSON.stringify(progress));
+                } catch (e) { }
+            }
+        }
+
+        function sendCommission() {
+            if (!dlArtifact || !dlLog) return;
+            const d = capturedData;
+            const subject = `Protocol 06 Commission Request (${d.name})`;
+            const body = `Dear Avery Lake,
+
+I have completed Protocol 06: The Signal and would like to request a signed and certified physical copy.
+
+PROTOCOL DATA:
+- Subject: ${d.name}
+- Hash: ${d.hash}
+- Signal: ${d.text}
+
+[IMPORTANT: I have attached BOTH the ARTIFACT IMAGE (with QR Code) and the DATA LOG to this email.]
+
+Please advise on commission details.
+
+TECHNICAL SPECIFICATIONS:
+- Size: 18″ × 24″ (recommended). Other sizes available upon request.`;
+
+            window.location.href = `mailto:hello@averylakeofficial.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+
+</html>
